@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Thinkful Tube Challenge</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="app.css">
+  </head>
+  <body>
+    <header role="banner" class="fullpage">
+      <h1>Thinkful Tube</h1>
+      <form action="#" id="search">
+        <label for="ytsearch">Find Videos</label>
+        <input type="search" name="ytsearch" id="ytsearch" placeholder="Search for Something Fun...">
+        <input type="submit">
+      </form>
+    </header>
+    <main role="main" class="hidden">
+      <h2 class="result-header">Search Results for "<span class="search-term"></span>":</h2>
+      <div class="page-nav">
+        <a href="#" class="page-prev">< Previous</a>
+        <div class="page-location">Page <span class="current-page"></span> of <span class="num-pages"></span></div>
+        <a href="#" class="page-next">Next ></a>
+      </div>
+      <div class="result-page-container">
+      </div>
+      <div class="page-nav">
+        <a href="#" class="page-prev">< Previous</a>
+        <div class="page-location">Page <span class="current-page"></span> of <span class="num-pages"></span></div>
+        <a href="#" class="page-next">Next ></a>
+      </div>
+      <div id="lightbox" class="hidden">
+          <p>Click to close</p>
+          <div id="content">
+
+          </div>
+      </div>
+    </main>
+    <!-- jQuery -->
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+    <!-- jsrender -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsrender/0.9.90/jsrender.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!-- app-specific js -->
+    <script type="text/javascript" src="app.js"></script>
+  </body>
+</html>

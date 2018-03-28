@@ -1,0 +1,73 @@
+html {
+  box-sizing: border-box;
+}
+header, main {
+  padding: 25px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.result-page-container {
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.result-container {
+  width: 220px;
+  border: 1px solid #808080;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px auto;
+}
+img {
+  max-width: 100%;
+}
+.hidden {
+  display: none;
+}
+.page-nav {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.page-location {
+  grid-column-start: 2;
+  text-align: center;
+}
+.page-next {
+  text-align: right;
+}
+
+#lightbox {
+    position:fixed; /* keeps the lightbox window in the current viewport */
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-color: rgba(0,0,0, 0.8);
+    text-align:center;
+}
+#lightbox p {
+    text-align:right;
+    color:#fff;
+    margin-right:20px;
+    font-size:12px;
+}
+#lightbox iframe {
+    box-shadow:0 0 25px #111;
+    -webkit-box-shadow:0 0 25px #111;
+    -moz-box-shadow:0 0 25px #111;
+    max-width:940px;
+}
+#content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+iframe {
+  margin: 40px auto;
+}
+.lightbox-footer {
+  background-color: #000000;
+}
