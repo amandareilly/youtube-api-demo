@@ -4,8 +4,8 @@ function lazyGetTemplate(name) {
   // as a named template, fetch it. In either case, return a promise
   // (already resolved, if the template has already been loaded)
   let deferred = $.Deferred();
-  const myPath = window.location.href.split('/')[0];
-  let url = myPath + '/' + name + '.js';
+  const myPath = window.location.href.split('?')[0];
+  let url = myPath + name + '.js';
   if ($.templates[name]) {
     deferred.resolve();
   } else {
