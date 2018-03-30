@@ -52,7 +52,6 @@ function processSearch(e) {
 //check for query string in address bar
 function checkUrlSearch() {
   let url = window.location.href;
-  console.log(url);
   return url.split('?')[1];
 }
 //search from address bar
@@ -111,9 +110,7 @@ function handleReturnedData(data) {
       if (!searchTerm) {
         searchTerm = checkUrlSearch();
       }
-      console.log(history.state);
       history.pushState(window.location.href, '', window.location.href + '?' + encodeURI(decodeURI(searchTerm)));
-      console.log(history.state);
       const nextPageToken = data.nextPageToken;
       const prevPageToken = data.prevPageToken;
       $('.result-page-container').html(html);
