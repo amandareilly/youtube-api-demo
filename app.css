@@ -23,7 +23,7 @@ html, body {
 }
 .result-container {
   min-width: 220px;
-  border: 3px solid #10CCFF;
+  border: 3px solid #00617A;
   padding: 0;
   display: grid;
 }
@@ -46,7 +46,7 @@ img {
 }
 
 .result-container a {
-  color: #10CCFF;
+  color: #00617A;
   font-weight: bold;
   text-decoration: none;
   text-align: center;
@@ -54,7 +54,7 @@ img {
 
 .result-container a:focus, .result-container a:hover {
   color: #FFFFFF;
-  background-color: #10CCFF;
+  background-color: #00617A;
 }
 
 .page-nav a {
@@ -120,7 +120,7 @@ img {
   max-width: 1000px;
   margin: auto;
   padding: 20px;
-  background-color: #10CCFF;
+  background-color: #00617A;
 }
 iframe {
   margin: 40px auto;
@@ -166,7 +166,7 @@ header>.container {
 }
 
 header {
-  background-color: #10CCFF;
+  background-color: #00617A;
 }
 
 h1 {
@@ -212,7 +212,7 @@ input, .submit-btn {
 
 .submit-btn:focus, .submit-btn:hover {
   background-color: #FFFFFF;
-  color: #10CCFF;
+  color: #00617A;
 }
 
 .reader-only {
@@ -229,4 +229,8 @@ figure {
   -webkit-margin-after: 0;
   -webkit-margin-start: 0;
   -webkit-margin-end: 0;
+}
+
+.result-header {
+  color: #00617A;
 }
