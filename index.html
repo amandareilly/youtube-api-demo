@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>Thinkful Tube Challenge</title>
+    <title>Thinkful Tube: A YouTube Search API Demonstration</title>
     <link href="https://fonts.googleapis.com/css?family=Cutive+Mono|Raleway" rel="stylesheet">
     <link rel="stylesheet" href="app.css">
   </head>
@@ -15,21 +15,21 @@
           <p class="subheading">A YouTube Search API Demonstration</p>
         </div>
         <form action="#" id="search">
-          <label for="ytsearch" class="reader-only">Find Videos</label>
-          <input type="search" name="ytsearch" id="ytsearch" placeholder="Search for Something Fun...">
-          <button type="submit" class="submit-btn">Search</button>
+          <label for="ytsearch" class="reader-only">Enter a Keyword to Search</label>
+          <input type="search" name="ytsearch" id="ytsearch" placeholder="Search for Something..." tabindex="50">
+          <button type="submit" class="submit-btn" tabindex="50">Search</button>
         </form>
       </div>
     </header>
-    <main role="main" class="hidden">
+    <main role="main" class="hidden" aria-live="assertive" hidden>
       <div class="container">
-        <h2 class="result-header">Search Results for "<span class="search-term"></span>":</h2>
+        <h2 class="result-header" tabindex="0">Search Results for "<span class="search-term"></span>":</h2>
         <div class="page-nav">
           <a href="#" class="page-prev">< Previous</a>
-          <div class="page-location">Page <span class="current-page"></span> of <span class="num-pages"></span></div>
+          <div class="page-location" tabindex="0">Page <span class="current-page"></span> of <span class="num-pages"></span></div>
           <a href="#" class="page-next">Next ></a>
         </div>
-        <div class="result-page-container">
+        <div class="result-page-container" aria-live="assertive">
         </div>
         <div class="page-nav">
           <a href="#" class="page-prev">< Previous</a>

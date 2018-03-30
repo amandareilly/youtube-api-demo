@@ -35,6 +35,7 @@ function mainHandler() {
     $('#ytsearch').focus();
   }
 
+  $('main').prop('hidden', true);
   $('#search').submit(processSearch);
   $('.page-prev').off('click').click(previousPage);
   $('.page-next').off('click').click(nextPage);
@@ -118,7 +119,7 @@ function handleReturnedData(data) {
       $('.result-page-container').html(html);
       $('.search-term').text(decodeURI(searchTerm));
       $('#ytsearch').val('');
-      $('main').removeClass('hidden');
+      $('main').removeClass('hidden').prop('hidden', false);
       $('main').addClass('resultpage');
       $('header').removeClass('fullpage');
       $('header').addClass('resultpage');
@@ -148,6 +149,8 @@ function handleReturnedData(data) {
       }
     });
   }
+  $(document.activeElement).blur();
+  $('.result-header').focus();
 }
 function renderLightbox(e) {
   e.preventDefault();
