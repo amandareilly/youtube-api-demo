@@ -31,6 +31,8 @@ function mainHandler() {
   const search = checkUrlSearch();
   if (search) {
     urlSearch(search);
+  } else {
+    $('#ytsearch').focus();
   }
 
   $('#search').submit(processSearch);
@@ -61,6 +63,7 @@ function urlSearch(searchString) {
 
 function previousPage(e) {
   e.preventDefault();
+  $('.page-prev').blur();
   const page = $('body').data('page') - 1;
   $('body').data('page', page);
   const data = $('.page-prev').data();
@@ -69,6 +72,7 @@ function previousPage(e) {
 
 function nextPage(e) {
   e.preventDefault();
+  $('.page-next').blur();
   const page = $('body').data('page') + 1;
   $('body').data('page', page);
   const data = $('.page-next').data();
@@ -81,7 +85,7 @@ function ytApiCall(searchString, pt = null) {
 
   const PARAMS = {
     part: 'snippet',
-    maxResults: 16,
+    maxResults: 15,
     q: searchString,
     type: 'video',
     videoEmbeddable: true,
@@ -111,16 +115,20 @@ function handleReturnedData(data) {
       const prevPageToken = data.prevPageToken;
       $('.result-page-container').html(html);
       $('.search-term').text(decodeURI(searchTerm));
-      $('#ytSearch').val('');
+      console.log($('#ytsearch').val());
+      $('#ytsearch').val('');
+      console.log($('#ytsearch').val());
       $('main').removeClass('hidden');
+      $('main').addClass('resultpage');
       $('header').removeClass('fullpage');
+      $('header').addClass('resultpage');
       $('.page-nav').removeClass('hidden');
       $('.result-header').removeClass('hidden');
       $('.current-page').text($('body').data('page'));
       if (data.pageInfo.totalResults < 500) {
-        $('.num-pages').text(Math.ceil(data.pageInfo.totalResults / 16));
+        $('.num-pages').text(Math.ceil(data.pageInfo.totalResults / 15));
       } else {
-        $('.num-pages').text('32');
+        $('.num-pages').text('33');
       }
       if (!prevPageToken) {
         $('.page-prev').addClass('hidden');
