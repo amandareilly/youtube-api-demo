@@ -4,7 +4,7 @@ function lazyGetTemplate(name) {
   // as a named template, fetch it. In either case, return a promise
   // (already resolved, if the template has already been loaded)
   let deferred = $.Deferred();
-  const myPath = window.location.href.split('?')[0];
+  const myPath = window.location.href.split('/')[0];
   let url = myPath + name + '.js';
   if ($.templates[name]) {
     deferred.resolve();
@@ -52,6 +52,7 @@ function processSearch(e) {
 //check for query string in address bar
 function checkUrlSearch() {
   let url = window.location.href;
+  console.log(url);
   return url.split('?')[1];
 }
 //search from address bar
@@ -110,14 +111,14 @@ function handleReturnedData(data) {
       if (!searchTerm) {
         searchTerm = checkUrlSearch();
       }
-      history.pushState('', '', '/?' + encodeURI(decodeURI(searchTerm)));
+      console.log(history.state);
+      history.pushState(window.location.href, '', window.location.href + '/?' + encodeURI(decodeURI(searchTerm)));
+      console.log(history.state);
       const nextPageToken = data.nextPageToken;
       const prevPageToken = data.prevPageToken;
       $('.result-page-container').html(html);
       $('.search-term').text(decodeURI(searchTerm));
-      console.log($('#ytsearch').val());
       $('#ytsearch').val('');
-      console.log($('#ytsearch').val());
       $('main').removeClass('hidden');
       $('main').addClass('resultpage');
       $('header').removeClass('fullpage');
