@@ -110,7 +110,9 @@ function handleReturnedData(data) {
       if (!searchTerm) {
         searchTerm = checkUrlSearch();
       }
-      history.pushState(window.location.href, '', window.location.href + '?' + encodeURI(decodeURI(searchTerm)));
+      const url = window.location.href.split('?')[0]  + '?';
+      const encodedSearch = encodeURI(decodeURI(searchTerm));
+      history.pushState(window.location.href, '', url + encodedSearch);
       const nextPageToken = data.nextPageToken;
       const prevPageToken = data.prevPageToken;
       $('.result-page-container').html(html);
