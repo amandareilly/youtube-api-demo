@@ -5,7 +5,7 @@ function lazyGetTemplate(name) {
   // (already resolved, if the template has already been loaded)
   let deferred = $.Deferred();
   const myPath = window.location.href.split('/')[0];
-  let url = myPath + name + '.js';
+  let url = myPath + '/' + name + '.js';
   if ($.templates[name]) {
     deferred.resolve();
   } else {
@@ -112,7 +112,7 @@ function handleReturnedData(data) {
         searchTerm = checkUrlSearch();
       }
       console.log(history.state);
-      history.pushState(window.location.href, '', window.location.href + '/?' + encodeURI(decodeURI(searchTerm)));
+      history.pushState(window.location.href, '', window.location.href + '?' + encodeURI(decodeURI(searchTerm)));
       console.log(history.state);
       const nextPageToken = data.nextPageToken;
       const prevPageToken = data.prevPageToken;
