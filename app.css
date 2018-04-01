@@ -1,9 +1,11 @@
 html, body {
   box-sizing: border-box;
   height: 100%;
+  width: 100%;
   font-family: 'Raleway', sans-serif;
   color: #FFFFFF;
   margin: 0;
+  position: relative;
 }
 :focus {
   outline-style: none;
@@ -136,21 +138,19 @@ iframe {
 .lightbox-footer a {
   display: block;
   margin: 5px;
-  color: #08627F;
+  color: #FFFFFF;
   text-decoration: none;
   text-align: center;
   padding: 5px;
+  min-height: 30px;
 }
 
 .lightbox-footer a:focus, .lightbox-footer a:hover {
-  background-color: #08627F;
-  color: #FFFFFF;
+  border: 2px solid #FFFFFF;
 }
 
 .fullpage, .fullpage>.container {
   height: 100%;
-  min-width: 100%;
-  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -195,17 +195,26 @@ input {
 }
 
 input, .submit-btn {
-  font-size: 1.5em;
-  padding: 15px;
+  font-size: 1.3em;
+  padding: .7em;
   border: 3px solid #FFFFFF;
   color: #FFFFFF;
   background-color: transparent;
 }
 .fullpage input, .fullpage .submit-btn {
-    font-size: 2em;
-    padding: 25px;
+    font-size: 1.5em;
+    padding: 1em;
     border: 5px solid #FFFFFF;
 }
+
+.fullpage input {
+  flex-grow: 3;
+}
+
+.fullpage .submit-btn {
+  flex-grow: 1;
+}
+
 ::placeholder {
   color: #FFFFFF;
 }
@@ -229,4 +238,82 @@ figure {
   -webkit-margin-after: 0;
   -webkit-margin-start: 0;
   -webkit-margin-end: 0;
+}
+
+.result-header {
+  color: #00617A;
+}
+
+@media only screen and (max-width: 940px) {
+  h1 {
+    font-size: 2em;
+  }
+
+  p {
+    font-size: 1em;
+  }
+
+  input, .submit-btn {
+    font-size: 1em;
+    padding: .5em;
+  }
+}
+
+@media only screen and (max-width: 695px) {
+  .fullpage form {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .fullpage input, .fullpage .submit-btn {
+    flex-grow: 0;
+  }
+
+  .fullpage input {
+    width: 100%;
+  }
+  .fullpage .submit-btn {
+    margin-top: 1em;
+  }
+
+  header.resultpage>.container {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .resultpage form {
+    margin-top: .7em;
+  }
+
+  .resultpage .heading-container {
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .fullpage input, .fullpage .submit-btn {
+    font-size: 1.1em;
+    padding: .7em;
+  }
+
+  .fullpage h1 {
+    font-size: 2em;
+  }
+
+  .fullpage p {
+    font-size: 1em;
+  }
+
+  .resultpage form {
+    flex-direction: column;
+  }
+
+  .resultpage input, .resultpage .submit-btn {
+    width: 100%;
+  }
+
+  .resultpage .submit-btn {
+    margin-top: .7em;
+  }
 }
